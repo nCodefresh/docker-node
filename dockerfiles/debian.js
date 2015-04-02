@@ -23,7 +23,8 @@ var pkgs   = 'RUN apt-get update \\\n'+
 
 var node   = 'RUN curl {{URL}} > node.deb \\\n' +
              ' && dpkg -i node.deb \\\n' +
-             ' && rm node.deb'
+             ' && rm node.deb \\\n' +
+             ' && npm update -g npm'
 
 var footer = 'RUN npm install -g pangyp\\\n' +
              ' && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\\\n' +

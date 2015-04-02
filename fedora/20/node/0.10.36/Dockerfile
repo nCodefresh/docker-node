@@ -9,7 +9,8 @@ RUN yum install -y \
 
 RUN curl -sL -o ns.rpm https://rpm.nodesource.com/pub/fc/20/x86_64/nodejs-0.10.36-1nodesource.fc20.x86_64.rpm \
  && rpm -i --nosignature --force ns.rpm \
- && rm -f ns.rpm
+ && rm -f ns.rpm \
+ && npm update -g npm
 
 RUN npm install -g pangyp\
  && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\

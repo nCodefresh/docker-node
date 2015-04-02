@@ -13,7 +13,8 @@ RUN apt-get update \
 
 RUN curl https://deb.nodesource.com/node012/pool/main/n/nodejs/nodejs_0.12.0-1nodesource1~wheezy1_amd64.deb > node.deb \
  && dpkg -i node.deb \
- && rm node.deb
+ && rm node.deb \
+ && npm update -g npm
 
 RUN npm install -g pangyp\
  && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\

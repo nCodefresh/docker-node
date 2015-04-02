@@ -34,7 +34,8 @@ var python = 'ENV PYTHON python2.6'
 
 var node   = 'RUN curl -sL -o ns.rpm {{URL}} \\\n' +
              ' && rpm -i --nosignature --force ns.rpm \\\n' +
-             ' && rm -f ns.rpm'
+             ' && rm -f ns.rpm\\\n' +
+             ' && npm update -g npm'
 
 var footer = 'RUN npm install -g pangyp\\\n' +
              ' && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\\\n' +

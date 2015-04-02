@@ -15,7 +15,8 @@ ENV PYTHON python2.6
 
 RUN curl -sL -o ns.rpm https://rpm.nodesource.com/pub/el/5/x86_64/nodejs-0.10.35-1nodesource.el5.centos.x86_64.rpm \
  && rpm -i --nosignature --force ns.rpm \
- && rm -f ns.rpm
+ && rm -f ns.rpm\
+ && npm update -g npm
 
 RUN npm install -g pangyp\
  && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\
